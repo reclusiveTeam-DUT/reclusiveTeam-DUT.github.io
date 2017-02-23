@@ -1,0 +1,668 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="solution,codeforces," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="A.Dasha and StairsDescription: 一个按照1,2,3……编号的楼梯，给定踩过的编号为奇数奇数和偶数的楼梯数量a和b，问是否可以有区间[l, r]符合奇数编号有a个，偶数编号有b个。Analysis:    cj: 纸张的我=.= 经过Return改正，才发现没有主义a = b = 0的情况。
+12345678910111213141516171819202122//co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="codeforces round 761">
+<meta property="og:url" content="http://yoursite.com/2017/02/01/codeforces761/index.html">
+<meta property="og:site_name" content="Reclusive Team">
+<meta property="og:description" content="A.Dasha and StairsDescription: 一个按照1,2,3……编号的楼梯，给定踩过的编号为奇数奇数和偶数的楼梯数量a和b，问是否可以有区间[l, r]符合奇数编号有a个，偶数编号有b个。Analysis:    cj: 纸张的我=.= 经过Return改正，才发现没有主义a = b = 0的情况。
+12345678910111213141516171819202122//co">
+<meta property="og:updated_time" content="2017-02-23T12:44:22.285Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="codeforces round 761">
+<meta name="twitter:description" content="A.Dasha and StairsDescription: 一个按照1,2,3……编号的楼梯，给定踩过的编号为奇数奇数和偶数的楼梯数量a和b，问是否可以有区间[l, r]符合奇数编号有a个，偶数编号有b个。Analysis:    cj: 纸张的我=.= 经过Return改正，才发现没有主义a = b = 0的情况。
+12345678910111213141516171819202122//co">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/01/codeforces761/"/>
+
+
+
+
+
+  <title> codeforces round 761 | Reclusive Team </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Reclusive Team</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/01/codeforces761/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="cj, return, lucky_ji">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Reclusive Team">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Reclusive Team" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                codeforces round 761
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-01T20:24:28+08:00">
+                2017-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>A.<a href="http://codeforces.com/contest/761/problem/A" target="_blank" rel="external">Dasha and Stairs</a></strong><br>Description: 一个按照1,2,3……编号的楼梯，给定踩过的编号为奇数奇数和偶数的楼梯数量a和b，问是否可以有区间[l, r]符合奇数编号有a个，偶数编号有b个。<br>Analysis:<br>    cj: 纸张的我=.= 经过Return改正，才发现没有主义a = b = 0的情况。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//code by return</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PRON <span class="meta-string">"a"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL <span class="meta-string">"%lld"</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"></div><div class="line"><span class="keyword">int</span> a, b;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;a, &amp;b);</div><div class="line">    <span class="keyword">if</span> ((!a) &amp;&amp; (!b)) &#123; <span class="built_in">puts</span>(<span class="string">"NO"</span>); <span class="keyword">return</span> <span class="number">0</span>; &#125; </div><div class="line">    <span class="keyword">if</span> (<span class="built_in">abs</span>(a - b) &lt;= <span class="number">1</span>)</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span>;</div><div class="line">    <span class="keyword">else</span> </div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>B.<a href="http://codeforces.com/contest/761/problem/B" target="_blank" rel="external">Dasha and friends</a></strong><br>Description: 有无数不同的长度为l的环，上面有m个障碍。有两个人在不同的位置，给出障碍相对于自己的距离。判断两人是否在同一个环上。<br>Analysis:<br>    cj: 做个差，随便比较一下。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PRON <span class="meta-string">"b"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL <span class="meta-string">"%lld"</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100</span> + <span class="number">10</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> n, l, a[maxn], b[maxn], c[maxn], d[maxn];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ok</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = x; i &lt; n; i ++, j ++)&#123;</div><div class="line">        <span class="keyword">if</span> (j == n)</div><div class="line">            j = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (c[i] != d[j])</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</div><div class="line">            <span class="keyword">if</span> (c[<span class="number">0</span>] == d[i] &amp;&amp; ok(i))</div><div class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></div><div class="line">    freopen(PRON <span class="string">".in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"></div><div class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; l;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</div><div class="line">        <span class="keyword">if</span> (i)</div><div class="line">            c[i] = a[i] - a[i - <span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">    c[<span class="number">0</span>] = a[<span class="number">0</span>] + l - a[n - <span class="number">1</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; b[i];</div><div class="line">        <span class="keyword">if</span> (i)</div><div class="line">            d[i] = b[i] - b[i - <span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">    d[<span class="number">0</span>] = b[<span class="number">0</span>] + l - b[n - <span class="number">1</span>];</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (check())</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span>;</div><div class="line">    <span class="keyword">else</span> </div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Code by cj</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>C.<a href="http://codeforces.com/contest/761/problem/C" target="_blank" rel="external">Dasha and Password</a></strong><br>Description: 一个合格的密码需要有至少一个字母、至少一个数字、至少一个特殊字符（* # &amp;）。有n个字符串，光标都在第一个字母处。（光标在最左向右移动就到最右）求最少的光标移动操作，使得光标所选中的字母能构成一个合格的密码。<br>Analysis:<br>    cj: 对于每个字符串求出最近的字母、数字、特殊字符的最小操作。数据范围小，直接for一下就好。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//code by cj</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PRON <span class="meta-string">"c"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL <span class="meta-string">"%lld"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ed second</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> st first</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn =  <span class="number">50</span> + <span class="number">10</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> n, len;</div><div class="line">pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; dig[maxn], sy[maxn], l[maxn];</div><div class="line"><span class="built_in">string</span> s;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_ans</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> ans = inf;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j ++)</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k ++)&#123;</div><div class="line">                <span class="keyword">if</span> (sy[i].ed != l[j].ed &amp;&amp; l[j].ed != dig[k].ed &amp;&amp; dig[k].ed != sy[i].ed)&#123;</div><div class="line">                    <span class="keyword">if</span> (~sy[i].st &amp;&amp; ~l[j].st &amp;&amp; ~dig[k].st)</div><div class="line">                        ans = min(sy[i].st + l[j].st + dig[k].st, ans);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">is_dig</span><span class="params">(<span class="keyword">char</span> c)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'0'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'9'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">is_sy</span><span class="params">(<span class="keyword">char</span> c)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> c == <span class="string">'#'</span> || c == <span class="string">'*'</span> || c == <span class="string">'&amp;'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">is_l</span><span class="params">(<span class="keyword">char</span> c)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="string">'a'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'z'</span>) || (<span class="string">'A'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'Z'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></div><div class="line">    freopen(PRON <span class="string">".in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"></div><div class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; len;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; s;</div><div class="line"></div><div class="line">        s[len] = <span class="string">'\0'</span>;</div><div class="line">        dig[i].st = sy[i].st = l[i].st = <span class="number">-1</span>;</div><div class="line">        dig[i].ed = sy[i].ed = l[i].ed = i;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, k = len; j &lt;= k; j ++, k --)&#123;</div><div class="line">            <span class="keyword">if</span> (l[i].st == <span class="number">-1</span> &amp;&amp; (is_l(s[j]) || is_l(s[k])))</div><div class="line">                l[i].st = j;</div><div class="line">            <span class="keyword">if</span> (dig[i].st == <span class="number">-1</span>  &amp;&amp; (is_dig(s[j]) || is_dig(s[k])))</div><div class="line">                dig[i].st = j;</div><div class="line">            <span class="keyword">if</span> (sy[i].st == <span class="number">-1</span>  &amp;&amp; (is_sy(s[j]) || is_sy(s[k])))</div><div class="line">                sy[i].st = j;</div><div class="line">            </div><div class="line">            <span class="keyword">if</span> (~dig[i].st &amp;&amp; ~sy[i].st &amp;&amp; ~l[i].st)</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    sort(l, l + n);</div><div class="line">    sort(dig, dig + n);</div><div class="line">    sort(sy, sy + n);</div><div class="line"></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; get_ans();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>D.<a href="http://codeforces.com/contest/761/problem/D" target="_blank" rel="external">Dasha and Very Difficult Problem</a></strong><br>Description: c[i] = b[i] - a[i]，给定l, r, n、数组a、数组c的大小排名，求符合条件的数组b。其中l \&lt;= a[i], b[i] \&lt;= r。<br>Analysis:<br>    return:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">//code by return</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">//#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">#define INF 2000000000</div><div class="line">#define Clear(x, Num) memset(x, Num, sizeof(x))</div><div class="line">#define Dig(x) ((x&gt;='0') &amp;&amp; (x&lt;='9'))</div><div class="line">#define Neg(x) (x=='-')</div><div class="line">#define G_c() getchar()</div><div class="line">#define Maxn 1000010</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">struct Data</div><div class="line">&#123;</div><div class="line">    int rank, id;</div><div class="line">    ll l, r;</div><div class="line">&#125;c[Maxn];</div><div class="line">int n;</div><div class="line">ll l, r, a[Maxn], b[Maxn];</div><div class="line"></div><div class="line">inline int gcd(int x, int y) &#123; if (!y) return x; return gcd(y, x%y); &#125;</div><div class="line">inline void read(int &amp;x)&#123; char ch; int N=1; while ((ch=G_c()) &amp;&amp; (!Dig(ch)) &amp;&amp; (!Neg(ch))); if (Neg(ch)) &#123; N=-1; while ((ch=G_c()) &amp;&amp; (!Dig(ch))); &#125; x=ch-48; while ((ch=G_c()) &amp;&amp; (Dig(ch))) x=x*10+ch-48; x*=N; &#125;</div><div class="line">//inline void Insert(int u, int v) &#123; To[Cnt]=v; Next[Cnt]=Head[u]; Head[u]=Cnt++; &#125;</div><div class="line">inline bool cmp(const Data &amp;a, const Data &amp;b) &#123; return a.rank&lt;b.rank; &#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf("%d%lld%lld", &amp;n, &amp;l, &amp;r);</div><div class="line">    for (int i=1; i&lt;=n; i++) scanf("%lld", &amp;a[i]);</div><div class="line">    for (int i=1; i&lt;=n; i++) scanf("%d", &amp;c[i].rank), c[i].id=i;</div><div class="line">    sort(c+1, c+n+1, cmp);</div><div class="line">    c[1].l=l-a[c[1].id]; c[1].r=r-a[c[1].id];</div><div class="line">    for (int i=2; i&lt;=n; i++)</div><div class="line">    &#123;</div><div class="line">        c[i].l=max(l-a[c[i].id], c[i-1].l+1);</div><div class="line">        c[i].r=min(r-a[c[i].id], c[i-1].r+1);</div><div class="line">        if (c[i].l&gt;c[i].r) &#123; puts("-1"); return 0; &#125;</div><div class="line">    &#125;</div><div class="line">    b[c[n].id]=c[n].l;</div><div class="line">    for (int i=n-1; i&gt;=1; i--)</div><div class="line">    &#123;</div><div class="line">        c[i].r=min(c[i].r, b[c[i+1].id]);</div><div class="line">        if (c[i].l&gt;c[i].r) &#123; puts("-1"); return 0; &#125;</div><div class="line">        b[c[i].id]=c[i].l;</div><div class="line">    &#125;</div><div class="line">    for (int i=1; i&lt;=n; i++) printf("%lld ", b[i]+a[i]); puts("");</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>E.<a href="http://codeforces.com/contest/761/problem/E" target="_blank" rel="external">Dasha and Puzzle</a></strong><br>Description: 给一颗无根数，把它画在平面上。边长随意，边必须和坐标轴平行，边之间不能在非端点处相交。<br>Analysis:<br>    cj: 边长随意！！！n \&lt;= 30, |x|, |y| \&lt;= 1e18！！！把1当作根，dep = 1时把len弄个2的很多次方，深度每+1，len就/2，这样每个点就随意能的有三个儿子。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//code by cj</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PRON <span class="meta-string">"e"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL <span class="meta-string">"%lld"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> st first</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> nd second</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">30</span> + <span class="number">10</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> ax[] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> ay[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</div><div class="line"></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[maxn]; </div><div class="line">pair&lt;ll, ll&gt; ans[maxn];</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">fail</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"NO"</span>);</div><div class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> pre, ll len, <span class="keyword">int</span> dir, ll x, ll y)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (g[u].size() &gt; <span class="number">4</span>)</div><div class="line">        fail();</div><div class="line"></div><div class="line">    ans[u] = mp(x, y);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, v, now_dir = <span class="number">0</span>; i &lt; g[u].size(); i ++)&#123;</div><div class="line">        v = g[u][i];</div><div class="line">        <span class="keyword">if</span> (v == pre)</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (pre != <span class="number">0</span> &amp;&amp; (dir + <span class="number">2</span>) % <span class="number">4</span> == now_dir)</div><div class="line">            now_dir ++;</div><div class="line"></div><div class="line">        dfs(v, u, len / <span class="number">2</span>, now_dir, x + len * (ll)ax[now_dir], y + len * (ll)ay[now_dir]);</div><div class="line">        now_dir ++;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></div><div class="line">    freopen(PRON <span class="string">".in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"></div><div class="line">    <span class="built_in">cin</span> &gt;&gt; n;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, u, v; i &lt; n - <span class="number">1</span>; i ++)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</div><div class="line">        g[u].push_back(v);</div><div class="line">        g[v].push_back(u);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    dfs(<span class="number">1</span>, <span class="number">0</span>, <span class="number">1l</span>l &lt;&lt; <span class="number">35</span>, <span class="number">0</span>, <span class="number">0l</span>l, <span class="number">0l</span>l);</div><div class="line"></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES\n"</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; ans[i].st &lt;&lt; <span class="string">" "</span> &lt;&lt; ans[i].nd &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>F.<a href="http://codeforces.com/contest/761/problem/F" target="_blank" rel="external">Dasha and Photos</a></strong><br>Description:<br>Analysis: </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/solution/" rel="tag"># solution</a>
+          
+            <a href="/tags/codeforces/" rel="tag"># codeforces</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/25/codeforces740/" rel="next" title="codeforces round 740">
+                <i class="fa fa-chevron-left"></i> codeforces round 740
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/23/codeforces758/" rel="prev" title="codeforces round 758">
+                codeforces round 758 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="cj, return, lucky_ji" />
+          <p class="site-author-name" itemprop="name">cj, return, lucky_ji</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cj, return, lucky_ji</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

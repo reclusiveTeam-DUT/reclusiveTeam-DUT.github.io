@@ -1,0 +1,665 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="solution,codeforces," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="A.Holiday Of EqualityDescription: 给定一串数列，已知数不能减小且增加1的代价为1，求将所有数变成相同的最小代价Analysis: 
+1234567891011121314151617181920212223242526272829//code by return#include&amp;lt;cstdio&amp;gt;#include&amp;lt;cstring&amp;gt;#includ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="codeforces round 758">
+<meta property="og:url" content="http://yoursite.com/2017/02/23/codeforces758/index.html">
+<meta property="og:site_name" content="Reclusive Team">
+<meta property="og:description" content="A.Holiday Of EqualityDescription: 给定一串数列，已知数不能减小且增加1的代价为1，求将所有数变成相同的最小代价Analysis: 
+1234567891011121314151617181920212223242526272829//code by return#include&amp;lt;cstdio&amp;gt;#include&amp;lt;cstring&amp;gt;#includ">
+<meta property="og:updated_time" content="2017-02-23T13:13:48.945Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="codeforces round 758">
+<meta name="twitter:description" content="A.Holiday Of EqualityDescription: 给定一串数列，已知数不能减小且增加1的代价为1，求将所有数变成相同的最小代价Analysis: 
+1234567891011121314151617181920212223242526272829//code by return#include&amp;lt;cstdio&amp;gt;#include&amp;lt;cstring&amp;gt;#includ">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/23/codeforces758/"/>
+
+
+
+
+
+  <title> codeforces round 758 | Reclusive Team </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Reclusive Team</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/23/codeforces758/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="cj, return, lucky_ji">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Reclusive Team">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Reclusive Team" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                codeforces round 758
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-23T21:04:10+08:00">
+                2017-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>A.<a href="http://codeforces.com/contest/758/problem/A" target="_blank" rel="external">Holiday Of Equality</a></strong><br>Description: 给定一串数列，已知数不能减小且增加1的代价为1，求将所有数变成相同的最小代价<br>Analysis: </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//code by return</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">//#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">#define INF 2000000000</div><div class="line">#define Clear(x, Num) memset(x, Num, sizeof(x))</div><div class="line">#define Dig(x) ((x&gt;='0') &amp;&amp; (x&lt;='9'))</div><div class="line">#define Neg(x) (x=='-')</div><div class="line">#define G_c() getchar()</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">int n, x, Max, Sig;</div><div class="line">inline int gcd(int x, int y) &#123; if (!y) return x; return gcd(y, x%y); &#125;</div><div class="line">inline void read(int &amp;x)&#123; char ch; int N=1; while ((ch=G_c()) &amp;&amp; (!Dig(ch)) &amp;&amp; (!Neg(ch))); if (Neg(ch)) &#123; N=-1; while ((ch=G_c()) &amp;&amp; (!Dig(ch))); &#125; x=ch-48; while ((ch=G_c()) &amp;&amp; (Dig(ch))) x=x*10+ch-48; x*=N; &#125;</div><div class="line">//inline void Insert(int u, int v) &#123; To[Cnt]=v; Next[Cnt]=Head[u]; Head[u]=Cnt++; &#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	read(n);</div><div class="line">	for (int i=1; i&lt;=n; i++) read(x), Max=max(Max, x), Sig+=x;</div><div class="line">	printf("%d\n", Max*n-Sig);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>B.<a href="http://codeforces.com/contest/758/problem/B" target="_blank" rel="external">Blown Garland</a></strong><br>Description: 给定一串仅包含“R”，“B”，“Y”，“G”四种颜色和“！”的序列，已知任意连续的四个颜色不能相同，试确定所有“！”并输出“！”中各颜色所占数量<br>Analysis:<br>    return: 常规思路：注意到合法序列的排列方式仅有24种，故可用枚举的方法将所有答案序列和原序列匹配即可<br>    改进：显然不论如何排列，同种颜色出现的位次Mod 4的结果必然相同，又由于答案序列有且只有一组，故可以直接扫描原序列来得到答案序列，从而减少了代码量</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//code by return</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">//#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">#define INF 2000000000</div><div class="line">#define Clear(x, Num) memset(x, Num, sizeof(x))</div><div class="line">#define Dig(x) ((x&gt;='0') &amp;&amp; (x&lt;='9'))</div><div class="line">#define Neg(x) (x=='-')</div><div class="line">#define G_c() getchar()</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">int Count[5], Link[110];</div><div class="line">char str[1010];</div><div class="line"></div><div class="line">inline int gcd(int x, int y) &#123; if (!y) return x; return gcd(y, x%y); &#125;</div><div class="line">inline void read(int &amp;x)&#123; char ch; int N=1; while ((ch=G_c()) &amp;&amp; (!Dig(ch)) &amp;&amp; (!Neg(ch))); if (Neg(ch)) &#123; N=-1; while ((ch=G_c()) &amp;&amp; (!Dig(ch))); &#125; x=ch-48; while ((ch=G_c()) &amp;&amp; (Dig(ch))) x=x*10+ch-48; x*=N; &#125;</div><div class="line">//inline void Insert(int u, int v) &#123; To[Cnt]=v; Next[Cnt]=Head[u]; Head[u]=Cnt++; &#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	scanf("%s", str+1); int n=strlen(str+1);</div><div class="line">	for (int i=1; i&lt;=n; i++)</div><div class="line">		if (str[i]=='!') Count[i%4]++;</div><div class="line">		else</div><div class="line">			if (!Link[str[i]]) Link[str[i]]=i%4;</div><div class="line">	printf("%d %d %d %d\n", Count[Link['R']], Count[Link['B']], Count[Link['Y']], Count[Link['G']]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>C.<a href="http://codeforces.com/contest/758/problem/C" target="_blank" rel="external">Unfair Poll</a></strong><br>Description: 有n行m列的学生，且有k个问题以行序「1..n-1 n n-1..1」列序「1..m」的方式提问，求问到问题最多的、问到问题最少的以及某个学生（x,y）被提问的次数<br>Analysis:<br>    return: 首先n=1和2时，存在循环节「1..n」，简单模拟即可<br>    不难发现n&gt;2时，存在循环节「1..n-1 n n-1..2」，每个循环中第1行和第n行回答了一次，其余行为两次。之后对于剩下的不足一个循环的次数，简单模拟即可<br>    （需要注意的细节不少，建议画个的图手动模拟一下）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">//code by return</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">//#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">#define INF 2000000000</div><div class="line">#define Clear(x, Num) memset(x, Num, sizeof(x))</div><div class="line">#define Dig(x) ((x&gt;='0') &amp;&amp; (x&lt;='9'))</div><div class="line">#define Neg(x) (x=='-')</div><div class="line">#define G_c() getchar()</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">ll n, m, k, x, y, Time, Max, Min, Sergei;</div><div class="line"></div><div class="line">inline int gcd(int x, int y) &#123; if (!y) return x; return gcd(y, x%y); &#125;</div><div class="line">inline void read(ll &amp;x)&#123; char ch; int N=1; while ((ch=G_c()) &amp;&amp; (!Dig(ch)) &amp;&amp; (!Neg(ch))); if (Neg(ch)) &#123; N=-1; while ((ch=G_c()) &amp;&amp; (!Dig(ch))); &#125; x=ch-48; while ((ch=G_c()) &amp;&amp; (Dig(ch))) x=x*10+ch-48; x*=N; &#125;</div><div class="line">//inline void Insert(int u, int v) &#123; To[Cnt]=v; Next[Cnt]=Head[u]; Head[u]=Cnt++; &#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	read(n); read(m); read(k); read(x); read(y);</div><div class="line">	if ((n==1) || (n==2))</div><div class="line">	&#123;</div><div class="line">		Time=k/(n*m); k-=Time*n*m;</div><div class="line">		Max=Min=Sergei=Time;</div><div class="line">		Max+=(k&gt;0), Sergei+=((x-1)*m+y&lt;=k);</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		Time=k/(m*(n-1)&lt;&lt;1); k-=(Time*m*(n-1)&lt;&lt;1);</div><div class="line">		Max=Time&lt;&lt;1; Min=Time;</div><div class="line">		if ((x==1) || (x==n)) Sergei=Min;</div><div class="line">		else Sergei=Max+(((n&lt;&lt;1)-x-1)*m+y&lt;=k);</div><div class="line">		if ((x-1)*m+y&lt;=k) Sergei++;</div><div class="line">		if (!Time)</div><div class="line">		&#123;</div><div class="line">			if (k&lt;n*m) Max=1, Min=0;</div><div class="line">			else</div><div class="line">				if (k==n*m) Max=Min=1;</div><div class="line">				else Max=2, Min=1; </div><div class="line">		&#125;</div><div class="line">		else Max+=(k&gt;m)+(k&gt;n*m), Min+=(k&gt;=n*m);</div><div class="line">	&#125;</div><div class="line">	printf("%lld %lld %lld\n", Max, Min, Sergei);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>D.<a href="http://codeforces.com/contest/758/problem/D" target="_blank" rel="external">Ability To Convert</a></strong><br>Description: 给定一串数字，对于每个进制位，放入的数字必需小于n（若为0，则不能有前导0），最小化该数字在十进制下的值<br>Analysis:<br>    return: 考虑到高位数字应该尽可能的小，因而尝试贪心：从最低位开始，每次在该进制位放置尽可能多的数字，并去掉前导0，O(length)模拟一遍即可<br>    （由于解不超过long long，故无需使用高精度）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">//code by return</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">//#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">#define INF 2000000000</div><div class="line">#define Clear(x, Num) memset(x, Num, sizeof(x))</div><div class="line">#define Dig(x) ((x&gt;='0') &amp;&amp; (x&lt;='9'))</div><div class="line">#define Neg(x) (x=='-')</div><div class="line">#define G_c() getchar()</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">ll n, m, k, x, y, Time, Max, Min, Sergei;</div><div class="line"></div><div class="line">inline int gcd(int x, int y) &#123; if (!y) return x; return gcd(y, x%y); &#125;</div><div class="line">inline void read(ll &amp;x)&#123; char ch; int N=1; while ((ch=G_c()) &amp;&amp; (!Dig(ch)) &amp;&amp; (!Neg(ch))); if (Neg(ch)) &#123; N=-1; while ((ch=G_c()) &amp;&amp; (!Dig(ch))); &#125; x=ch-48; while ((ch=G_c()) &amp;&amp; (Dig(ch))) x=x*10+ch-48; x*=N; &#125;</div><div class="line">//inline void Insert(int u, int v) &#123; To[Cnt]=v; Next[Cnt]=Head[u]; Head[u]=Cnt++; &#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	read(n); read(m); read(k); read(x); read(y);</div><div class="line">	if ((n==1) || (n==2))</div><div class="line">	&#123;</div><div class="line">		Time=k/(n*m); k-=Time*n*m;</div><div class="line">		Max=Min=Sergei=Time;</div><div class="line">		Max+=(k&gt;0), Sergei+=((x-1)*m+y&lt;=k);</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		Time=k/(m*(n-1)&lt;&lt;1); k-=(Time*m*(n-1)&lt;&lt;1);</div><div class="line">		Max=Time&lt;&lt;1; Min=Time;</div><div class="line">		if ((x==1) || (x==n)) Sergei=Min;</div><div class="line">		else Sergei=Max+(((n&lt;&lt;1)-x-1)*m+y&lt;=k);</div><div class="line">		if ((x-1)*m+y&lt;=k) Sergei++;</div><div class="line">		if (!Time)</div><div class="line">		&#123;</div><div class="line">			if (k&lt;n*m) Max=1, Min=0;</div><div class="line">			else</div><div class="line">				if (k==n*m) Max=Min=1;</div><div class="line">				else Max=2, Min=1; </div><div class="line">		&#125;</div><div class="line">		else Max+=(k&gt;m)+(k&gt;n*m), Min+=(k&gt;=n*m);</div><div class="line">	&#125;</div><div class="line">	printf("%lld %lld %lld\n", Max, Min, Sergei);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>E.<a href="http://codeforces.com/contest/758/problem/E" target="_blank" rel="external">Broken Tree</a></strong><br>Description: 给出一颗有根树，对于每条边定义(x, y, p, w)，其中x为近根点。对于一颗合法的树，需满足：对每一条边，该边的p值大于等于其子树的Sigma_w，已知边的p值和w值不可增，且每次对w的修改同时会作用于p上，输出满足w值之和最大的合法的树<br>Analysis:<br>    return: 由于直接构造十分困难，不妨考虑先构造出一颗满足条件的最小流量（Current_w）的合法的树。<br>    自底向上构造，对于这样一颗树，约束条件为w≧1，p≧Current_Sigma_w，故贪心最小化Current_w即可（需要注意的是，无解条件当且仅当原始树存在一条边的p值小于其子树的Sigma_w）<br>    构造完后得到每条边的最小流量（Current_w）和最大流量（w），自顶向下，注入inf单位流量，每次贪心修改，最大化边存储流量即可</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">//code by return</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">//#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">#define INF 1&lt;&lt;60</div><div class="line">#define Clear(x, Num) memset(x, Num, sizeof(x))</div><div class="line">#define Dig(x) ((x&gt;='0') &amp;&amp; (x&lt;='9'))</div><div class="line">#define Neg(x) (x=='-')</div><div class="line">#define G_c() getchar()</div><div class="line">#define Maxn 200010</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">int n, X, Y, W, P, root;</div><div class="line">int Cnt, Head[Maxn], From[Maxn], To[Maxn], Next[Maxn];</div><div class="line">ll Max_flow, Strength[Maxn], Weight[Maxn], Change[Maxn], Sig_weight[Maxn];</div><div class="line"></div><div class="line">inline int gcd(int x, int y) &#123; if (!y) return x; return gcd(y, x%y); &#125;</div><div class="line">inline void read(int &amp;x)&#123; char ch; int N=1; while ((ch=G_c()) &amp;&amp; (!Dig(ch)) &amp;&amp; (!Neg(ch))); if (Neg(ch)) &#123; N=-1; while ((ch=G_c()) &amp;&amp; (!Dig(ch))); &#125; x=ch-48; while ((ch=G_c()) &amp;&amp; (Dig(ch))) x=x*10+ch-48; x*=N; &#125;</div><div class="line">inline void Insert(int u, int v, int w, int p) &#123; From[Cnt]=u; To[Cnt]=v; Weight[Cnt]=(ll)w; Strength[Cnt]=(ll)p; Next[Cnt]=Head[u]; Head[u]=Cnt++; &#125;</div><div class="line">inline void Init() &#123; root=1; Clear(Head, -1); Cnt=0; Max_flow=(ll)INF; &#125;</div><div class="line"></div><div class="line">inline void Minimize(int u)</div><div class="line">&#123;</div><div class="line">	for (int p=Head[u]; p!=-1; p=Next[p])</div><div class="line">	&#123;</div><div class="line">		int v=To[p];</div><div class="line">		Minimize(v);</div><div class="line">		if (Strength[p]&lt;Sig_weight[v]) &#123; puts("-1"); exit(0); &#125;</div><div class="line">		ll Delta=min(Weight[p]-1, Strength[p]-Sig_weight[v]);</div><div class="line">		Strength[p]-=Delta, Weight[p]-=Delta; Change[p]+=Delta;</div><div class="line">		Sig_weight[u]+=Sig_weight[v]+Weight[p];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">inline ll Maximize(int u, ll Cur_limit)</div><div class="line">&#123;</div><div class="line">	ll Addline=0;</div><div class="line">	for (int p=Head[u]; p!=-1; p=Next[p])</div><div class="line">	&#123;</div><div class="line">		int v=To[p];</div><div class="line">		ll Delta=min(Change[p], Cur_limit);</div><div class="line">		Strength[p]+=Delta; Weight[p]+=Delta; Cur_limit-=Delta; Addline+=Delta;</div><div class="line">		Delta=Maximize(v, min(Cur_limit, Strength[p]-Sig_weight[v]));</div><div class="line">		Cur_limit-=Delta; Addline+=Delta;</div><div class="line">	&#125;</div><div class="line">	return Addline;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	Init();</div><div class="line">	read(n);</div><div class="line">	for (int i=1; i&lt;n; i++) read(X), read(Y), read(W), read(P), Insert(X, Y, W, P);</div><div class="line">	Minimize(root); Maximize(root, Max_flow);</div><div class="line">	printf("%d\n", n);</div><div class="line">	for (int i=0; i&lt;n-1; i++) printf("%d %d %lld %lld\n", From[i], To[i], Weight[i], Strength[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>F.<a href="http://codeforces.com/contest/758/problem/F" target="_blank" rel="external">Geometrical Progression</a></strong><br>Description: 给定区间「l, r」，问在该区间内满足项数为n的不同的等比数列个数（每项需均为整数）<br>Analysis:<br>    return: 先n=1和2时，简单讨论即可得到答案<br>    对于n>2，枚举公比d，设d=p/q，由于对称性，即若d=p/q有解，则d=q/p同样有解，不妨讨论d>1的情况。<br>    对于每一个合法的p和q，设首项为a_1，则有末项a_n=a_1<em>(p/q)^(n-1)，约束条件为a_n≦r &amp;&amp; a_1≧l，从而解出a_1的范围「l_, r_」，则方案数为(r_-l_+1)</em>2，求和即可<br>    而对于枚举的p, q的范围，显然满足Bound^(n-1)≦r，由于数据中r≤10^7，从而O(Bound^2)枚举即可（同样，可以算出n>25时解个数为0）<br>    （注意使用快速幂）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">//code by return</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">//#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">#define INF 2000000000</div><div class="line">#define Clear(x, Num) memset(x, Num, sizeof(x))</div><div class="line">#define Dig(x) ((x&gt;='0') &amp;&amp; (x&lt;='9'))</div><div class="line">#define Neg(x) (x=='-')</div><div class="line">#define G_c() getchar()</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">ll n, l, r, Count;</div><div class="line"></div><div class="line">inline ll gcd(ll x, ll y) &#123; if (!y) return x; return gcd(y, x%y); &#125;</div><div class="line">inline void read(int &amp;x)&#123; char ch; int N=1; while ((ch=G_c()) &amp;&amp; (!Dig(ch)) &amp;&amp; (!Neg(ch))); if (Neg(ch)) &#123; N=-1; while ((ch=G_c()) &amp;&amp; (!Dig(ch))); &#125; x=ch-48; while ((ch=G_c()) &amp;&amp; (Dig(ch))) x=x*10+ch-48; x*=N; &#125;</div><div class="line">//inline void Insert(int u, int v) &#123; To[Cnt]=v; Next[Cnt]=Head[u]; Head[u]=Cnt++; &#125;</div><div class="line"></div><div class="line">inline ll Pow(ll a, int x)</div><div class="line">&#123;</div><div class="line">	ll Res=1ll;</div><div class="line">	for (; x; x&gt;&gt;=1)</div><div class="line">	&#123;</div><div class="line">		if (x&amp;1) Res*=a;</div><div class="line">		a*=a;</div><div class="line">	&#125;</div><div class="line">	return Res;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	scanf("%lld%lld%lld", &amp;n, &amp;l, &amp;r);</div><div class="line">	if (n&gt;25) &#123; puts("0"); return 0; &#125;</div><div class="line">	if (n==1) &#123; printf("%lld\n", r-l+1); return 0; &#125;</div><div class="line">	if (n==2) &#123; printf("%lld\n", (r-l+1)*(r-l)); return 0; &#125;</div><div class="line">//	int L=1, R=60; while (L&lt;=R) &#123; int mid=(L+R)&gt;&gt;1; if (Base[mid]&lt;r) L=mid+1; else R=mid-1; &#125;</div><div class="line">	ll Bound=1ll;</div><div class="line">	while (Pow(Bound, n-1)&lt;=r) Bound++;</div><div class="line">	for (ll q=1ll; q&lt;=Bound; q++)</div><div class="line">		for (ll p=q+1; p&lt;=Bound; p++)</div><div class="line">			if (gcd(p, q)==1)</div><div class="line">			&#123;</div><div class="line">				ll P=Pow(p, n-1), Q=Pow(q, n-1);</div><div class="line">				if (P*l&gt;r*Q) continue;</div><div class="line">				ll limit=r*Q/P;</div><div class="line">				Count+=(((limit/Q)-((l-1)/Q))&lt;&lt;1);</div><div class="line">			&#125;</div><div class="line">	printf("%lld\n", Count);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/solution/" rel="tag"># solution</a>
+          
+            <a href="/tags/codeforces/" rel="tag"># codeforces</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/01/codeforces761/" rel="next" title="codeforces round 761">
+                <i class="fa fa-chevron-left"></i> codeforces round 761
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="cj, return, lucky_ji" />
+          <p class="site-author-name" itemprop="name">cj, return, lucky_ji</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cj, return, lucky_ji</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
